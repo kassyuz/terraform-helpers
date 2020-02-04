@@ -2,6 +2,12 @@
 
 TF_VERSION=$1
 
+if [ -z "$TF_VERSION" ]
+then
+      echo "\$TF_VERSION is empty, inform Terraform version, e.g. ./install-terraform.sh 0.12.19"
+      exit 1
+fi
+
 echo "Downloading Terraform $TF_VERSION"
 wget https://releases.hashicorp.com/terraform/$TF_VERSION/terraform_$TF_VERSION\_linux_amd64.zip
 
